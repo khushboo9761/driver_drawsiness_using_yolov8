@@ -1,5 +1,11 @@
 /desktop.ini
 /venv
-/dataset
-/datasets
 /runs
+/database
+/datasets
+/.gitmodules
+/.idea
+/GroundingDINO
+/datasetsHungingFace
+/requirements
+yolov8n.pt

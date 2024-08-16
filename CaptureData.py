@@ -8,23 +8,23 @@ from PIL import Image, ImageTk
 class CaptureCameraApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("Reproductor de Cámara")
+        self.root.title("Camera Player")
 
         self.cap = cv2.VideoCapture(0)
         time.sleep(1.000)
         self.label = Label(root)
         self.label.grid(column=0,row=3, columnspan=3)
 
-        self.btn_yawn = Button(root, text="Captura para Bostezo", command=lambda: self.capture_action_image("yawn"))
+        self.btn_yawn = Button(root, text="Capture for yawing", command=lambda: self.capture_action_image("yawn"))
         self.btn_yawn.grid(column=0,row=0,padx=5,pady=5)
 
-        self.btn_drowsy = Button(root, text="Captura para Ojos cerrados",command=lambda: self.capture_action_image("drowsy"))
+        self.btn_drowsy = Button(root, text="Capture for closed eyes",command=lambda: self.capture_action_image("drowsy"))
         self.btn_drowsy.grid(column=1,row=0,padx=5,pady=5)
 
-        self.btn_awake = Button(root, text="Captura para Despierto", command=lambda: self.capture_action_image("awake"))
+        self.btn_awake = Button(root, text="Capture for open eyes", command=lambda: self.capture_action_image("awake"))
         self.btn_awake.grid(column=2,row=0,padx=5,pady=5)
 
-        self.lblinfo = Label(root,text="Video de Entrada: ")
+        self.lblinfo = Label(root,text="Video input: ")
         self.lblinfo.grid(column=1,row=1,rowspan=1)
 
         self.update_frame()
@@ -42,15 +42,13 @@ class CaptureCameraApp:
             self.cap.release()
 
     def capture_action_image(self, action):
-        print("entra")
         ret, frame = self.cap.read()
         if ret:
             dateid = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-            cv2.imwrite("dataset/{}_{}.jpg".format(action, dateid), frame)
-            print("Imagen capturada y guardada como '{}/data_{}.jpg'".format(action, dateid))
+            cv2.imwrite("database/untagged_images/{}_{}.jpg".format(action, dateid), frame)
+            print("Image captured and saved as  '{}/data_{}.jpg'".format(action, dateid))
 
 
-# Crear la ventana de Tkinter
 root = tk.Tk()
 app = CaptureCameraApp(root)
 root.mainloop()

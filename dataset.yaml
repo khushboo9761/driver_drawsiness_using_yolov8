@@ -1,10 +1,9 @@
 # dataset.yaml
 path: datasets
-train: train/images
-val: validation/images
-test: test/images
-nc: 3 # Número de clases; ajusta según el número total de clases en tus datos
+train: images/train
+val: images/val
+# test: images/test
+nc: 2 # Número de clases; ajusta según el número total de clases en tus datos
 names: # Nombres de las clases; ajusta según tus clases
-0: "yawn"
-1: "awake"
-2: "drowsy"
+  0: open eye
+  1: close eye
