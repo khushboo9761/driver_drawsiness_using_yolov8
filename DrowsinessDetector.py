@@ -68,23 +68,24 @@ class DrowsinessDetector(QMainWindow):
         self.process_thread.start()
         
     def update_info(self):
-        if round(self.yawn_duration,2) > 7.0:
-            self.play_sound_in_thread()
-            self.alert_text = "<p style='color: orange; font-weight: bold;'>⚠️ Alerta: Bostezo Prolongado Detectado!</p>"
+        if round(self.yawn_duration, 2) > 7.0:
+            # self.play_sound_in_thread()
+            self.alert_text = "<p style='color: orange; font-weight: bold;'>⚠️ Alert: Prolonged Yawn Detected!</p>"
 
-        if round(self.microsleeps,2) > 4.0 :
-            self.play_sound_in_thread()
-            self.alert_text = "<p style='color: red; font-weight: bold;'>⚠️ Alerta: Micro Sueño Prolongado Detectado!</p>"
+        if round(self.microsleeps, 2) > 4.0:
+            # self.play_sound_in_thread()
+            self.alert_text = "<p style='color: red; font-weight: bold;'>⚠️ Alert: Prolonged Microsleep Detected!</p>"
+
 
         info_text = (
             f"<div style='font-family: Arial, sans-serif; color: #333;'>"
             f"<h2 style='text-align: center; color: #4CAF50;'>Drowsiness Detector</h2>"
             f"<hr style='border: 1px solid #4CAF50;'>"
-            f"{self.alert_text}"  # Mostrar alerta si existe
-            f"<p><b>👁️ Parpadeos:</b> {self.blinks}</p>"
-            f"<p><b>💤 Micro Sueños:</b> {round(self.microsleeps,2)} segundos</p>"
-            f"<p><b>😮 Bostezos:</b> {self.yawns}</p>"
-            f"<p><b>⏳ Duración de Bostezos:</b> {round(self.yawn_duration,2)} segundos</p>"
+            f"{self.alert_text}"  # Display alert if it exists
+            f"<p><b>👁️ Blinks:</b> {self.blinks}</p>"
+            f"<p><b>💤 Microsleeps:</b> {round(self.microsleeps,2)} seconds</p>"
+            f"<p><b>😮 Yawns:</b> {self.yawns}</p>"
+            f"<p><b>⏳ Yawn Duration:</b> {round(self.yawn_duration,2)} seconds</p>"
             f"<hr style='border: 1px solid #4CAF50;'>"
             f"</div>"
         )
