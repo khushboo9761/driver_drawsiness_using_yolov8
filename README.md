@@ -1,8 +1,8 @@
 # Drowsiness Detection System
 
 [![image](https://github.com/khushboo9761/driver_drawsiness_using_yolov8/blob/main/screenshots/drawsiness_detector.png)]
-![image](https://github.com/user-attachments/assets/0615e219-f623-47ff-9448-946a9c273500)
-![image](https://github.com/user-attachments/assets/b25705ed-d976-45a3-a080-fe1e12f220fd)
+![image](https://github.com/khushboo9761/driver_drawsiness_using_yolov8/blob/main/screenshots/prolongled_microsleep_detected.png)
+![image](https://github.com/khushboo9761/driver_drawsiness_using_yolov8/blob/main/screenshots/prolongled_yawn_detected.png)
 
 ## Overview
 
